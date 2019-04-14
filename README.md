@@ -9,8 +9,8 @@ An online, multiplayer trivia game based on Purdue.
 Authors
 -------
 - Abhinav Sinha - <sinha45@purdue.edu>
-- Pedro Garcia - [garci455@purdue.edu]
-- Murilo Silva - [silva52@purdue.edu]
+- Pedro Garcia - <garci455@purdue.edu>
+- Murilo Silva - <silva52@purdue.edu>
 
 Technologies
 ------------
