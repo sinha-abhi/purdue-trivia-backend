@@ -1,16 +1,16 @@
 package com.abhisinha.purduetrivia.game;
 
+import lombok.NoArgsConstructor;
 import org.apache.ignite.cache.query.annotations.QuerySqlField;
-
-import java.sql.Timestamp;
 import java.util.concurrent.atomic.AtomicLong;
+import lombok.Data;
 
 /**
  * Trivia Game User.
  *
  * @author Abhi Sinha
- * @version 1.0
  */
+@Data @NoArgsConstructor
 public class User {
     private static final AtomicLong ID_GEN = new AtomicLong();
 
@@ -33,11 +33,10 @@ public class User {
     private String password;
 
     /**
-     * Do nothing - needed for Ignite binary deserialization
+     * User trophies (indexed in Ignite).
      */
-    public User() {
-        // do nothing
-    }
+    @QuerySqlField(index = true)
+    private Integer trophies = 0;
 
     public User(String name, String password) {
         id = ID_GEN.incrementAndGet();
@@ -52,24 +51,13 @@ public class User {
         this.password = password;
     }
 
-    public Long id() {
-        return id;
-    }
-
-    public String name() {
-        return name;
-    }
-
-    public String password() {
-        return password;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", trophies=" + trophies +
                 '}';
     }
 }
