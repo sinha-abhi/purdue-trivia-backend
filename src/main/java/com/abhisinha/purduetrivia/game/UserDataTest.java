@@ -29,7 +29,7 @@ public class UserDataTest {
         for (long l = 0; l < 100; l++) {
             users.put(l, new User(l, "user-" + l, "password-" + l));
 
-            if (l % 100 == 0) {
+            if (l % 10 == 0) {
                 System.out.println("*** Created: " + l);
             }
         }

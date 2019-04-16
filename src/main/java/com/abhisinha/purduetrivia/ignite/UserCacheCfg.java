@@ -1,10 +1,7 @@
 package com.abhisinha.purduetrivia.ignite;
 
 import com.abhisinha.purduetrivia.game.User;
-import com.sun.org.apache.bcel.internal.generic.POP;
 import org.apache.ignite.Ignite;
-import org.apache.ignite.IgniteCache;
-import org.apache.ignite.IgniteDataStreamer;
 import org.apache.ignite.Ignition;
 import org.apache.ignite.cache.CacheAtomicityMode;
 import org.apache.ignite.cache.CacheWriteSynchronizationMode;
@@ -47,17 +44,17 @@ public class UserCacheCfg {
     public Ignite igniteInstance() {
         Ignition.setClientMode(true);
 
-        try (Ignite ignite = Ignition.start(CONFIG_XML)) {
-            ignite.cluster().active(true);
+        Ignite ignite = Ignition.start(CONFIG_XML);
 
-            CacheConfiguration<Long, User> cacheCfg = new CacheConfiguration<>(USER_CACHE);
+        ignite.cluster().active(true);
 
-            cacheCfg.setBackups(1);
-            cacheCfg.setAtomicityMode(CacheAtomicityMode.TRANSACTIONAL);
-            cacheCfg.setWriteSynchronizationMode(CacheWriteSynchronizationMode.FULL_SYNC);
-            cacheCfg.setIndexedTypes(Long.class, User.class);
+        CacheConfiguration<Long, User> cacheCfg = new CacheConfiguration<>(USER_CACHE);
 
-            return ignite;
-        }
+        cacheCfg.setBackups(1);
+        cacheCfg.setAtomicityMode(CacheAtomicityMode.TRANSACTIONAL);
+        cacheCfg.setWriteSynchronizationMode(CacheWriteSynchronizationMode.FULL_SYNC);
+        cacheCfg.setIndexedTypes(Long.class, User.class);
+
+        return ignite;
     }
 }
