@@ -6,10 +6,14 @@ import org.apache.ignite.Ignition;
 import org.apache.ignite.cache.CacheAtomicityMode;
 import org.apache.ignite.cache.CacheWriteSynchronizationMode;
 import org.apache.ignite.configuration.CacheConfiguration;
-import org.apache.ignite.springdata.repository.config.EnableIgniteRepositories;
+import org.apache.ignite.configuration.IgniteConfiguration;
+import org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi;
+import org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder;
+import org.apache.ignite.springdata20.repository.config.EnableIgniteRepositories;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -40,21 +44,52 @@ public class UserCacheCfg {
     /**
      * Create Ignite instance bean.
      */
+//    @Bean
+//    public Ignite igniteInstance() {
+//        Ignition.setClientMode(true);
+//
+//        IgniteConfiguration cfg = new IgniteConfiguration();
+//
+//        cfg.setIgniteInstanceName("userDataNode");
+//
+//        Ignite ignite = Ignition.start(CONFIG_XML);
+//
+//        ignite.cluster().active(true);
+//
+//        CacheConfiguration<Long, User> cacheCfg = new CacheConfiguration<>(USER_CACHE);
+//
+//        cacheCfg.setBackups(1);
+//        cacheCfg.setAtomicityMode(CacheAtomicityMode.TRANSACTIONAL);
+//        cacheCfg.setWriteSynchronizationMode(CacheWriteSynchronizationMode.FULL_SYNC);
+//        cacheCfg.setIndexedTypes(Long.class, User.class);
+//
+//        return ignite;
+//    }
+
+    /**
+     * Create Ignite instance bean.
+     */
     @Bean
     public Ignite igniteInstance() {
         Ignition.setClientMode(true);
 
-        Ignite ignite = Ignition.start(CONFIG_XML);
+        IgniteConfiguration cfg = new IgniteConfiguration();
+        cfg.setIgniteInstanceName("userDataNode");
 
-        ignite.cluster().active(true);
+        TcpDiscoverySpi discoSpi = new TcpDiscoverySpi();
+        TcpDiscoveryVmIpFinder ipFinder = new TcpDiscoveryVmIpFinder();
+        ipFinder.setAddresses(Arrays.asList("127.0.0.1:47500", "127.0.0.1:47501", "127.0.0.1:47502"));
+        discoSpi.setIpFinder(ipFinder);
+        cfg.setDiscoverySpi(discoSpi);
 
         CacheConfiguration<Long, User> cacheCfg = new CacheConfiguration<>(USER_CACHE);
-
         cacheCfg.setBackups(1);
         cacheCfg.setAtomicityMode(CacheAtomicityMode.TRANSACTIONAL);
         cacheCfg.setWriteSynchronizationMode(CacheWriteSynchronizationMode.FULL_SYNC);
         cacheCfg.setIndexedTypes(Long.class, User.class);
 
-        return ignite;
+        cfg.setCacheConfiguration(cacheCfg);
+
+        return Ignition.start(cfg);
     }
 }
