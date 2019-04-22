@@ -1,10 +1,11 @@
+// EXAMPLE FILE -- NOT NEEDED
 package com.abhisinha.purduetrivia.ignite;
 
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
 import org.apache.ignite.IgniteDataStreamer;
 import org.apache.ignite.Ignition;
-import com.abhisinha.purduetrivia.game.User;
+import com.abhisinha.purduetrivia.game.models.User;
 import org.apache.ignite.cache.CacheAtomicityMode;
 import org.apache.ignite.cache.CacheWriteSynchronizationMode;
 import org.apache.ignite.configuration.CacheConfiguration;

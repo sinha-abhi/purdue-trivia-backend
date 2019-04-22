@@ -1,19 +1,24 @@
-package com.abhisinha.purduetrivia.game;
+package com.abhisinha.purduetrivia.game.models;
 
 import lombok.NoArgsConstructor;
 import org.apache.ignite.cache.query.annotations.QuerySqlField;
 import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Trivia Game User.
  *
  * @author Abhi Sinha
  */
+@Entity
 @Data @NoArgsConstructor
 public class User {
     /**
      * Unique user id (index in Ignite).
      */
+    @Id
     @QuerySqlField(index = true)
     private Long id;
 

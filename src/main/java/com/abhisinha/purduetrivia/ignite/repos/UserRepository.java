@@ -1,8 +1,7 @@
-package com.abhisinha.purduetrivia.ignite;
+package com.abhisinha.purduetrivia.ignite.repos;
 
-import com.abhisinha.purduetrivia.game.User;
+import com.abhisinha.purduetrivia.game.models.User;
 import org.apache.ignite.springdata20.repository.IgniteRepository;
-import org.apache.ignite.springdata20.repository.config.Query;
 import org.apache.ignite.springdata20.repository.config.RepositoryConfig;
 
 import java.util.List;
