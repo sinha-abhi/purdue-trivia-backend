@@ -130,6 +130,24 @@ public class GameData {
     }
 
     /**
+     * Gets all user names from Ignite Cache.
+     *
+     * @return  {@code List} of all usernames
+     */
+    public static List<String> getAllUsernames() {
+        List<String> names = new ArrayList<>();
+
+        QueryCursor<List<?>> cursor = userCache.query(
+                new SqlFieldsQuery("select name from User"));
+
+        for (List<?> res : cursor.getAll()) {
+            names.add(res.get(0).toString());
+        }
+
+        return names;
+    }
+
+    /**
      * Ranks users based on number of trophies and gives a list of highest ranked users, whose size
      * is given by {@code places}
      *
@@ -158,17 +176,33 @@ public class GameData {
     }
 
     /**
-     * Adds a new user to Ignite Cache.
+     * Forces a new user to be added to the Ignite Cache.
      *
      * @param name     User name
      * @param password User password
      */
-    public static void addUser(String name, String password) {
+    private static void addUser(String name, String password) {
         try (IgniteDataStreamer<Long, User> userStreamer = ignite.dataStreamer("UserCache")) {
             userStreamer.allowOverwrite(false);
 
             USER_KEY_SET.add(userIdGen.incrementAndGet());
             userStreamer.addData(userIdGen.get(), new User(userIdGen.get(), name, password));
+        }
+    }
+
+    /**
+     * Creates a new user and adds it to the Ignite Cache, after verifying that the username is unique.
+     *
+     * @param name  User name
+     * @param password  User password
+     * @return {@code true} if the user was created, {@code false} otherwise
+     */
+    public static boolean createUser(String name, String password) {
+        if (getAllUsernames().contains(name)) {
+            return false;
+        } else {
+            addUser(name, password);
+            return true;
         }
     }
 

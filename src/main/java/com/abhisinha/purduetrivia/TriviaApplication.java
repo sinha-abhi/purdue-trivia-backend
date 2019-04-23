@@ -17,20 +17,23 @@ public class TriviaApplication {
         System.out.println("TESTING CACHES...");
 
         for (int i = 0; i < 10; i++) {
-            GameData.addUser("user-" + i, "pass-" + i);
+            System.out.println(GameData.createUser("user-" + i, "pass-" + i));
+
         }
 
-        Map<Long, User> users = GameData.getAllUsers();
-        int i = 1;
-        Random rand = new Random();
-        for (Map.Entry<Long, User> u : users.entrySet()) {
-            u.getValue().addTrophies(i);
-            GameData.updateUser(u.getValue());
+//        Map<Long, User> users = GameData.getAllUsers();
+//        int i = 1;
+//        Random rand = new Random();
+//        for (Map.Entry<Long, User> u : users.entrySet()) {
+//            u.getValue().addTrophies(i);
+//            GameData.updateUser(u.getValue());
+//
+//            i += rand.nextInt();
+//        }
+//
+//        System.out.println("%%%% leaderboard: " + GameData.getTrophyLeaderboard(5));
 
-            i += rand.nextInt();
-        }
-
-        System.out.println("leaderboard: " + GameData.getTrophyLeaderboard(5));
+        System.out.println("usernames: " + GameData.getAllUsernames());
     }
 
 }

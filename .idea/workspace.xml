@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fdc976f-fd3c-4105-ac29-b384246a1945" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config/ignite/ignite-bean.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/QuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/WelcomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Welcome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/TriviaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/TriviaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/GameData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/QuestionData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/UserData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/UserPersistentStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/UserPersistentStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/config/IgniteCacheCfg.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/repos/QuestionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/repos/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/UserPersistentStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/ignite/user-persistent-storage.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/TriviaApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="304">
+              <caret line="19" column="78" lean-forward="true" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,14 +38,90 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2800">
-              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+            <state relative-caret-position="-624">
+              <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#3773#3774#0" expanded="true" />
                 <element signature="e#3991#3992#0" expanded="true" />
-                <element signature="e#6872#6873#0" expanded="true" />
-                <element signature="e#8193#8194#0" expanded="true" />
-                <element signature="e#8237#8238#0" expanded="true" />
+                <element signature="e#7867#7868#0" expanded="true" />
+                <element signature="e#9196#9197#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/GameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/WelcomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#344#345#0" expanded="true" />
+                <element signature="e#379#380#0" expanded="true" />
+                <element signature="e#545#546#0" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#872#873#0" expanded="true" />
+                <element signature="e#927#928#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/QuestionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
+                <element signature="e#1131#1132#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config/ignite/ignite-bean.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Welcome.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="46" selection-start-column="46" selection-end-column="46" />
+              <folding>
+                <element signature="e#132#133#0" expanded="true" />
+                <element signature="e#164#165#0" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#274#275#0" expanded="true" />
+                <element signature="e#316#317#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            <state relative-caret-position="970">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2209#2210#0" expanded="true" />
@@ -73,7 +146,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Question.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
+            <state relative-caret-position="-98">
               <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -134,10 +207,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/AutowireHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/GameData.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config/ignite/ignite-bean.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Question.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Welcome.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/QuestionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/TriviaApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/WelcomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/GameController.java" />
       </list>
     </option>
   </component>
@@ -223,6 +301,26 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="purduetrivia" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Purdue-Trivia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="purdue-trivia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="purduetrivia" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Purdue-Trivia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="purdue-trivia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="purduetrivia" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -394,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555952854735</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="database and project setup complete, queries support (almost) all actions needed">
+      <created>1555996924683</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555996924683</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -434,7 +539,8 @@
     <MESSAGE value="[patch] using spring boot 1.5.20.RELEASE for now" />
     <MESSAGE value="fixed version issues, began api for user repo" />
     <MESSAGE value="refactoring repositories" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring repositories" />
+    <MESSAGE value="database and project setup complete, queries support (almost) all actions needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="database and project setup complete, queries support (almost) all actions needed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/config.ignite.user-persistent-store.xml" />
@@ -531,13 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/ignite/ignite-bean.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/UserPersistentStorage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
@@ -548,9 +647,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Greeting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/ignite/ignite-bean.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Welcome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
+          <folding>
+            <element signature="e#132#133#0" expanded="true" />
+            <element signature="e#164#165#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="970">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#2235#2236#0" expanded="true" />
+            <element signature="e#2297#2298#0" expanded="true" />
+            <element signature="e#2338#2339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/TriviaApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="78" lean-forward="true" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624">
+          <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3773#3774#0" expanded="true" />
+            <element signature="e#3991#3992#0" expanded="true" />
+            <element signature="e#7867#7868#0" expanded="true" />
+            <element signature="e#9196#9197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="-98">
           <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -562,41 +728,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="528">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2209#2210#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-            <element signature="e#2297#2298#0" expanded="true" />
-            <element signature="e#2338#2339#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/QuestionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2800">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        <state relative-caret-position="96">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/WelcomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
           <folding>
-            <element signature="e#3773#3774#0" expanded="true" />
-            <element signature="e#3991#3992#0" expanded="true" />
-            <element signature="e#6872#6873#0" expanded="true" />
-            <element signature="e#8193#8194#0" expanded="true" />
-            <element signature="e#8237#8238#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#927#928#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/TriviaApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="32">
+          <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
         </state>
       </provider>
     </entry>
