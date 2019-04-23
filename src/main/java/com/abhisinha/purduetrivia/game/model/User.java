@@ -1,24 +1,19 @@
-package com.abhisinha.purduetrivia.game.models;
+package com.abhisinha.purduetrivia.game.model;
 
 import lombok.NoArgsConstructor;
 import org.apache.ignite.cache.query.annotations.QuerySqlField;
 import lombok.Data;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 /**
  * Trivia Game User.
  *
  * @author Abhi Sinha
  */
-@Entity
 @Data @NoArgsConstructor
 public class User {
     /**
      * Unique user id (index in Ignite).
      */
-    @Id
     @QuerySqlField(index = true)
     private Long id;
 
@@ -64,6 +59,16 @@ public class User {
         this.password = password;
     }
 
+    public User(Long id, String name, String password, Integer games, Double respTime, Double ratio, Integer trophies) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.games = games;
+        this.respTime = respTime;
+        this.ratio = ratio;
+        this.trophies = trophies;
+    }
+
     public Long getId() {
         return id;
     }
@@ -90,6 +95,14 @@ public class User {
 
     public Integer getTrophies() {
         return trophies;
+    }
+
+    public void addGames(int games) {
+        this.games += games;
+    }
+
+    public void addTrophies(int trophies) {
+        this.trophies += trophies;
     }
 
     @Override
