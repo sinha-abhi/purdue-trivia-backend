@@ -19,16 +19,14 @@
                     </bean>
                 </property>
 
-
                 <property name="discoverySpi">
                     <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
                         <property name="ipFinder">
                             <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
                                 <property name="addresses">
                                     <list>
-                                        <!--<value>172.31.29.78</value>-->
-                                        <value>127.0.0.1:47500..47502</value>
                                         <!--<value>54.193.83.132</value>-->
+                                        <value>127.0.0.1:47500..47502</value>
                                     </list>
                                 </property>
                             </bean>
@@ -36,23 +34,6 @@
                     </bean>
                 </property>
 
-                <!--
-                <property name="discoverySpi">
-                    <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
-                        <property name="ipFinder">
-                            <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.elb.TcpDiscoveryElbIpFinder">
-                                <property name="credentialsProvider">
-                                    <bean class="com.amazonaws.auth.AWSStaticCredentialsProvider">
-                                        <constructor-arg ref="aws.creds"/>
-                                    </bean>
-                                </property>
-                                <property name="region" value="us-west-1"/>
-                                <property name="loadBalancerName" value="abhi-nlb"/>
-                            </bean>
-                        </property>
-                    </bean>
-                </property>
-                -->
                 <property name="cacheConfiguration">
                     <list>
                         <bean class="org.apache.ignite.configuration.CacheConfiguration">

@@ -12,7 +12,7 @@ public class WebServerCustomization implements WebServerFactoryCustomizer<Config
     @Override
     public void customize(ConfigurableServletWebServerFactory container) {
         try {
-            container.setAddress(InetAddress.getByName("192.168.2.7"));
+            container.setAddress(InetAddress.getByName("127.0.0.1"));
         } catch (Exception e) {
             // do nothing
         }
