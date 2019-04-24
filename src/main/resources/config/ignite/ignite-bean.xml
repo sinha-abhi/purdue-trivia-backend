@@ -19,11 +19,11 @@
                     </bean>
                 </property>
 
+                <!--
                 <property name="discoverySpi">
                     <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
                         <property name="ipFinder">
                             <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
-                                <!--<bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.multicast.TcpDiscoveryMulticastIpFinder">-->
                                 <property name="addresses">
                                     <list>
                                         <value>127.0.0.1:47500..47502</value>
@@ -33,6 +33,24 @@
                         </property>
                     </bean>
                 </property>
+                -->
+
+                <property name="discoverySpi">
+                    <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
+                        <property name="ipFinder">
+                            <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.elb.TcpDiscoveryElbIpFinder">
+                                <property name="credentialsProvider">
+                                    <bean class="com.amazonaws.auth.AWSStaticCredentialsProvider">
+                                        <constructor-arg ref="aws.creds"/>
+                                    </bean>
+                                </property>
+                                <property name="region" value="us-west-1"/>
+                                <property name="loadBalancerName" value="abhi-nlb"/>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+
 
                 <property name="cacheConfiguration">
                     <list>
@@ -68,4 +86,10 @@
             </bean>
         </property>
     </bean>
+
+    <bean id="aws.creds" class="com.amazonaws.auth.BasicAWSCredentials">
+        <constructor-arg value="AKIAIO257JLT37N7ODUQ"/>
+        <constructor-arg value="jkDRc1m2kC0r/BM1rs1mdWMvbkufrPVKNDoozBkz"/>
+    </bean>
+
 </beans>

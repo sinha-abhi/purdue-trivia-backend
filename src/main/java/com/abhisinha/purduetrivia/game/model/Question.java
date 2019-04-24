@@ -41,6 +41,9 @@ public class Question {
     public String getQuestion() {
         return question;
     }
+    public String getCorrectAnswer() {
+        return options.get(0).getRight();
+    }
 
     public List<Pair<Boolean, String>> getOptions() {
         return options;

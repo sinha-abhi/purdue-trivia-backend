@@ -13,6 +13,7 @@ import org.apache.ignite.cache.query.SqlFieldsQuery;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class GameData {
     /**
@@ -149,7 +150,7 @@ public class GameData {
 
     /**
      * Ranks users based on number of trophies and gives a list of highest ranked users, whose size
-     * is given by {@code places}
+     * is given by either {@code places}, or if there are fewer users than places, the number of users.
      *
      * @param places Number of users in leaderboard
      * @return <tt>List</tt> of users ranked from first to last
@@ -157,9 +158,11 @@ public class GameData {
     public static List<User> getTrophyLeaderboard(int places) {
         List<User> users = new ArrayList<>();
 
+        int ranks = (places > USER_KEY_SET.size()) ? USER_KEY_SET.size() : places;
+
         QueryCursor<List<?>> cursor = userCache.query(
                 new SqlFieldsQuery("select top ? * from User order by trophies desc")
-                        .setArgs(places));
+                        .setArgs(ranks));
 
         for (List<?> res : cursor.getAll()) {
             users.add(new User(Long.parseLong(res.get(0).toString()),
@@ -278,5 +281,16 @@ public class GameData {
      */
     public static Question getQuestionById(long id) {
         return questionCache.get(id);
+    }
+
+    /**
+     * Get a random <tt>Question</tt> from the Ignite Cache.
+     *
+     * @return Random <tt>Question</tt>
+     */
+    public static Long getRandomQuestionId() {
+        int id = ThreadLocalRandom.current().nextInt(QUESTION_KEY_SET.size());
+
+        return new ArrayList<>(QUESTION_KEY_SET).get(id);
     }
 }

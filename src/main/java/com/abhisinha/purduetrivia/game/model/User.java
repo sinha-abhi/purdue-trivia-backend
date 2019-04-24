@@ -105,6 +105,16 @@ public class User {
         this.trophies += trophies;
     }
 
+    public void setRespTime(Double respTime) {
+        this.respTime = respTime;
+    }
+
+    public void setRatio(Double ratio) {
+        this.ratio = ratio;
+    }
+
+    // TODO: calculations for win ratio and response time
+
     @Override
     public String toString() {
         return "User{" +
