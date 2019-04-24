@@ -1,5 +1,5 @@
 # Backend for Purdue Ultimate Trivia
-An online trivia game based on facts about Purdue.
+The backend implementation for an online trivia game based on facts about Purdue.
 
 #### Key features
 - Player accounts: track player statistics

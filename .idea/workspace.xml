@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fdc976f-fd3c-4105-ac29-b384246a1945" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappings.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Welcome.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,12 +31,24 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="311">
-                <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
+              <first_editor relative-caret-position="320">
+                <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
               </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -275,11 +283,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="ignite" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Purdue-Trivia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="purdue-trivia" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -470,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556115130741</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="improved back-end readme">
+      <created>1556120897992</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556120897992</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -516,7 +526,8 @@
     <MESSAGE value="further work with aws, and created explanation file for mappings" />
     <MESSAGE value="updated rest endpoints" />
     <MESSAGE value="added crossorigins annotation to mappings, cleaned up code, and remove target folder from gitignore (jar is now available on git)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added crossorigins annotation to mappings, cleaned up code, and remove target folder from gitignore (jar is now available on git)" />
+    <MESSAGE value="improved back-end readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved back-end readme" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/config.ignite.user-persistent-store.xml" />
@@ -545,21 +556,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/UserData.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/ignite/UserPersistentStorage.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Greeting.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Welcome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="46" selection-start-column="46" selection-end-column="46" />
-          <folding>
-            <element signature="e#132#133#0" expanded="true" />
-            <element signature="e#164#165#0" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/init/QuestionLoader.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -660,16 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -716,6 +702,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/model/Welcome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/abhisinha/purduetrivia/game/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -724,8 +727,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="311">
-            <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
+          <first_editor relative-caret-position="320">
+            <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
