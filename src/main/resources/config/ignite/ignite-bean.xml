@@ -25,7 +25,6 @@
                             <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
                                 <property name="addresses">
                                     <list>
-                                        <!--<value>54.193.83.132</value>-->
                                         <value>127.0.0.1:47500..47502</value>
                                     </list>
                                 </property>
@@ -68,10 +67,4 @@
             </bean>
         </property>
     </bean>
-
-    <bean id="aws.creds" class="com.amazonaws.auth.BasicAWSCredentials">
-        <constructor-arg value="AKIAIO257JLT37N7ODUQ"/>
-        <constructor-arg value="jkDRc1m2kC0r/BM1rs1mdWMvbkufrPVKNDoozBkz"/>
-    </bean>
-
 </beans>

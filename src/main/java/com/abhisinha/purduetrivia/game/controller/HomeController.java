@@ -4,6 +4,7 @@ import com.abhisinha.purduetrivia.game.model.User;
 import com.abhisinha.purduetrivia.ignite.GameData;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,16 +17,17 @@ import java.util.List;
 public class HomeController implements ErrorController {
 
     @RequestMapping("/leaderboard/trophies")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<User> getTrophyLeaderboard(@RequestParam(value = "name", defaultValue = "") String name) {
         List<User> users = GameData.getUserByName(name);
 
         users.addAll(GameData.getTrophyLeaderboard(5));
-        System.out.println("%%%%% size: " + users.size());
 
         return users;
     }
 
     @RequestMapping("/leaderboard/ratio")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<User> getRatioLeaderboard(@RequestParam(value = "name", defaultValue = "") String name) {
         List<User> users = GameData.getUserByName(name);
 
@@ -35,6 +37,7 @@ public class HomeController implements ErrorController {
     }
 
     @RequestMapping("/leaderboard/respTime")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<User> getRespTimeLeaderboard(@RequestParam(value = "name", defaultValue = "") String name) {
         List<User> users = GameData.getUserByName(name);
 
@@ -44,6 +47,7 @@ public class HomeController implements ErrorController {
     }
 
     @RequestMapping("/error")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String onError(HttpServletRequest req) {
         Object stat = req.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
 

@@ -1,0 +1,70 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <description>Main Spring file for Ignite config</description>
+
+    <bean id="myIgniteSpringBean" class="org.apache.ignite.IgniteSpringBean">
+        <property name="configuration">
+            <bean id="ignite.cfg" class="org.apache.ignite.configuration.IgniteConfiguration">
+                <property name="clientMode" value="true"/>
+
+                <property name="dataStorageConfiguration">
+                    <bean class="org.apache.ignite.configuration.DataStorageConfiguration">
+                        <property name="defaultDataRegionConfiguration">
+                            <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
+                                <property name="persistenceEnabled" value="true"/>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+
+                <property name="discoverySpi">
+                    <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
+                        <property name="ipFinder">
+                            <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
+                                <property name="addresses">
+                                    <list>
+                                        <value>127.0.0.1:47500..47502</value>
+                                    </list>
+                                </property>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+
+                <property name="cacheConfiguration">
+                    <list>
+                        <bean class="org.apache.ignite.configuration.CacheConfiguration">
+                            <property name="name" value="UserCache"/>
+                            <property name="groupName" value="group1"/>
+                            <property name="backups" value="1"/>
+                            <property name="atomicityMode" value="TRANSACTIONAL"/>
+                            <property name="writeSynchronizationMode" value="FULL_SYNC"/>
+                            <property name="indexedTypes">
+                                <list>
+                                    <value>java.lang.Long</value>
+                                    <value>com.abhisinha.purduetrivia.game.model.User</value>
+                                </list>
+                            </property>
+                        </bean>
+
+                        <bean class="org.apache.ignite.configuration.CacheConfiguration">
+                            <property name="name" value="QuestionCache"/>
+                            <property name="groupName" value="group1"/>
+                            <property name="backups" value="1"/>
+                            <property name="atomicityMode" value="TRANSACTIONAL"/>
+                            <property name="writeSynchronizationMode" value="FULL_SYNC"/>
+                            <property name="indexedTypes">
+                                <list>
+                                    <value>java.lang.Long</value>
+                                    <value>com.abhisinha.purduetrivia.game.model.Question</value>
+                                </list>
+                            </property>
+                        </bean>
+                    </list>
+                </property>
+            </bean>
+        </property>
+    </bean>
+</beans>

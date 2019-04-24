@@ -1,0 +1,11 @@
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/model/User.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/controller/HomeController.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/controller/GameController.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/ignite/GameData.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/model/Question.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/model/Welcome.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/model/Game.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/init/WebServerCustomization.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/init/QuestionLoader.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/game/controller/UserController.java
+/home/abhi/mydata/git_repos/purdue-trivia/src/main/java/com/abhisinha/purduetrivia/TriviaApplication.java

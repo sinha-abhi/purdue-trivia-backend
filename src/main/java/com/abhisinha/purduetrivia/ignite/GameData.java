@@ -133,7 +133,7 @@ public class GameData {
     /**
      * Gets all user names from Ignite Cache.
      *
-     * @return  {@code List} of all usernames
+     * @return {@code List} of all usernames
      */
     public static List<String> getAllUsernames() {
         List<String> names = new ArrayList<>();
@@ -184,7 +184,7 @@ public class GameData {
     }
 
     public static List<User> getRatioLeaderboard(int places) {
-List<User> users = new ArrayList<>();
+        List<User> users = new ArrayList<>();
 
         int ranks = (places > USER_KEY_SET.size()) ? USER_KEY_SET.size() : places;
 
@@ -255,8 +255,8 @@ List<User> users = new ArrayList<>();
     /**
      * Creates a new user and adds it to the Ignite Cache, after verifying that the username is unique.
      *
-     * @param name  User name
-     * @param password  User password
+     * @param name     User name
+     * @param password User password
      * @return {@code true} if the user was created, {@code false} otherwise
      */
     public static boolean createUser(String name, String password) {
