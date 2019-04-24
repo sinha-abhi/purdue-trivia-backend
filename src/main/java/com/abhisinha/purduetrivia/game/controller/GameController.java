@@ -3,6 +3,8 @@ package com.abhisinha.purduetrivia.game.controller;
 import com.abhisinha.purduetrivia.game.model.Game;
 import com.abhisinha.purduetrivia.game.model.Question;
 import com.abhisinha.purduetrivia.ignite.GameData;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,13 +29,14 @@ public class GameController {
      * @return {@code true} if answer is correct, {@code false} otherwise
      */
     @RequestMapping("/game/option")
-    public boolean verifyUserChoice(@RequestParam(value = "opt", defaultValue = "") String opt,
-                                    @RequestParam(value = "time", defaultValue = "0.0") long time) {
+    public Pair<Boolean, String> verifyUserChoice(@RequestParam(value = "opt", defaultValue = "") String opt,
+                                                  @RequestParam(value = "time", defaultValue = "0.0") long time) {
+        String correct = game.currentQuestion().getCorrectAnswer();
         if (opt.length() == 0) {
-            return false;
+            return new ImmutablePair<>(false, correct);
         }
 
-        return game.checkAnswerAndUpdateGame(opt, time);
+        return new ImmutablePair<>(game.checkAnswerAndUpdateGame(opt, time), correct);
     }
 
     @RequestMapping("/game/next")

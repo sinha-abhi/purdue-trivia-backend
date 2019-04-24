@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
 
-    @GetMapping("/user/{username}/info")
-    public User getUserInfo(@PathVariable String username) {
-        return GameData.getUserByName(username).get(0);
-    }
-
     @RequestMapping("/user/validate")
     public boolean verifyUser(@RequestParam(value="name", defaultValue = "") String name, @RequestParam(value="password", defaultValue = "") String password) {
         if ((name.length() == 0) || (password.length() == 0)) {

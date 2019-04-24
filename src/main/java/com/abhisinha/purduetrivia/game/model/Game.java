@@ -57,6 +57,15 @@ public class Game {
         nextQuestion();
     }
 
+    /**
+     * Gets the current question.
+     *
+     * @return  Current <tt>Question</tt>
+     */
+    public Question currentQuestion() {
+        return question;
+    }
+
     private void nextQuestion() {
         long id = GameData.getRandomQuestionId();
         while (quesUsed.contains(id)) {

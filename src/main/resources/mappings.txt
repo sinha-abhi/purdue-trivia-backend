@@ -1,0 +1,92 @@
+MAPPINGS FOR CREATING/VALIDATING A USER:
+/user/validate?name=username&password=pswd
+Checks for whether a user with name username and password pswd exists
+Returns true if they do, or false if they do not
+
+example:
+
+url:
+http://192.168.2.7:1031/user/validate?name=asdfasdf&password=asdfasdf
+
+result:
+false
+OR
+true
+
+
+
+/user/create?name=username&password=pswd
+Tries to create a new user with name username and password pswd
+Returns true if successful, false otherwise
+
+example:
+
+url:
+http://192.168.2.7:1031/user/create?name=bob&password=good
+
+result:
+true
+OR
+false
+
+----------------------------------------------------------------
+
+MAPPINGS FOR THE GAME:
+/game?name=username
+Starts a new game for user with name username
+
+example:
+
+url:
+http://192.168.2.7:1031/game?name=user-1
+
+json result:
+{"user":{"id":2,"name":"user-1","password":"pass-1","games":0,"respTime":0.0,"ratio":0.0,"trophies":0},"question":{"id":18,"question":"How much was the gift John Purdue gave to found Purdue?","options":[{"true":"$150,000"},{"false":"$100,000"},{"false":"$200,000"},{"false":"$250,000"}],"correctAnswer":"$150,000","shuffledOptions":["$250,000","$200,000","$150,000","$100,000"]},"points":0,"correct":0,"totalTime":0,"quesUsed":[18],"gameOver":false}
+
+
+
+/game/option?opt=response&time=millis
+Sends user response to the back for validation
+Returns true and the correct answer if the answer was correct (in this case, the correct answer can be ignored)
+Returns false and the correct answer if the answer was wrong
+
+example:
+
+url:
+http://192.168.2.7:1031/game/option?opt=8&time=4567
+
+json result:
+{"true":"1876"}
+OR
+{"false":"1876"}
+
+
+/game/next
+Gets the next question from the game
+As soon as the gameOver field is set to true, the game is over according to the back end
+
+example:
+
+url:
+http://192.168.2.7:1031/game/next
+
+json result:
+{"user":{"id":2,"name":"user-1","password":"pass-1","games":0,"respTime":0.0,"ratio":0.0,"trophies":0},"question":{"id":9,"question":"How many Purdue Graduates became NASA astronauts?","options":[{"true":"23"},{"false":"21"},{"false":"25"},{"false":"27"}],"correctAnswer":"23","shuffledOptions":["25","21","27","23"]},"points":54,"correct":1,"totalTime":4567,"quesUsed":[9,26],"gameOver":false}
+
+----------------------------------------------------------------
+
+MAPPINGS FOR LEADERBOARD/USER INFO:
+/leaderboard/trophies?name=username
+/leaderboard/ration?name=username
+/leaderboard/respTime?name=username
+
+Returns the ranking based on the given field (trophies, ratio, respTime) as well as the information for
+the user with name username. The specified user is first in the list.
+
+example:
+
+url:
+http://192.168.2.7:1031/leaderboard/trophies?name=user-1
+
+json result:
+[{"id":2,"name":"user-1","password":"pass-1","games":0,"respTime":0.0,"ratio":0.0,"trophies":0},{"id":7,"name":"user-6","password":"pass-6","games":0,"respTime":0.0,"ratio":0.0,"trophies":0},{"id":6,"name":"user-5","password":"pass-5","games":0,"respTime":0.0,"ratio":0.0,"trophies":0},{"id":10,"name":"user-9","password":"pass-9","games":0,"respTime":0.0,"ratio":0.0,"trophies":0},{"id":8,"name":"user-7","password":"pass-7","games":0,"respTime":0.0,"ratio":0.0,"trophies":0},{"id":9,"name":"user-8","password":"pass-8","games":0,"respTime":0.0,"ratio":0.0,"trophies":0}]

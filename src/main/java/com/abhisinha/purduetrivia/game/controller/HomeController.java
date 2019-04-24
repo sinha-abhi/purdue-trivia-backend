@@ -5,6 +5,7 @@ import com.abhisinha.purduetrivia.ignite.GameData;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.RequestDispatcher;
@@ -14,9 +15,32 @@ import java.util.List;
 @RestController
 public class HomeController implements ErrorController {
 
-    @RequestMapping("/leaderboard")
-    public List<User> getTrophyLeaderboard() {
-        return GameData.getTrophyLeaderboard(5);
+    @RequestMapping("/leaderboard/trophies")
+    public List<User> getTrophyLeaderboard(@RequestParam(value = "name", defaultValue = "") String name) {
+        List<User> users = GameData.getUserByName(name);
+
+        users.addAll(GameData.getTrophyLeaderboard(5));
+        System.out.println("%%%%% size: " + users.size());
+
+        return users;
+    }
+
+    @RequestMapping("/leaderboard/ratio")
+    public List<User> getRatioLeaderboard(@RequestParam(value = "name", defaultValue = "") String name) {
+        List<User> users = GameData.getUserByName(name);
+
+        users.addAll(GameData.getRatioLeaderboard(5));
+
+        return users;
+    }
+
+    @RequestMapping("/leaderboard/respTime")
+    public List<User> getRespTimeLeaderboard(@RequestParam(value = "name", defaultValue = "") String name) {
+        List<User> users = GameData.getUserByName(name);
+
+        users.addAll(GameData.getRespTimeLeaderboard(5));
+
+        return users;
     }
 
     @RequestMapping("/error")
