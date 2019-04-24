@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// TODO: class that stores initial questions to be loaded into the cache on startup.
+// Stores initial questions to be loaded into the cache on startup.
 public final class QuestionLoader {
 
     private static Map<String, List<String>> questions;
