@@ -29,8 +29,6 @@ true
 OR
 false
 
-----------------------------------------------------------------
-
 MAPPINGS FOR THE GAME:
 /game?name=username
 Starts a new game for user with name username
@@ -72,8 +70,6 @@ http://192.168.2.7:1031/game/next
 
 json result:
 {"user":{"id":2,"name":"user-1","password":"pass-1","games":0,"respTime":0.0,"ratio":0.0,"trophies":0},"question":{"id":9,"question":"How many Purdue Graduates became NASA astronauts?","options":[{"true":"23"},{"false":"21"},{"false":"25"},{"false":"27"}],"correctAnswer":"23","shuffledOptions":["25","21","27","23"]},"points":54,"correct":1,"totalTime":4567,"quesUsed":[9,26],"gameOver":false}
-
-----------------------------------------------------------------
 
 MAPPINGS FOR LEADERBOARD/USER INFO:
 /leaderboard/trophies?name=username
