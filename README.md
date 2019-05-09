@@ -47,16 +47,16 @@ Cross origins is currently `http://localhost:4200`.
 ##### Mappings for creating/validating a User
 ###### /user/validate?name=username&password=pswd
 
-* Checks for whether a user with name username and password pswd exists
-* Returns true if they do, or false if they do not
+* Checks for whether a user with name `username` and password `pswd` exists
+* Returns true if one exists, or false otherwise
 
 ###### /user/create?name=username&password=pswd
-* Tries to create a new user with name username and password pswd
+* Tries to create a new user with name `username` and password `pswd`
 * Returns true if successful, false otherwise
 
 ##### Mappings for the playing game
 ###### /game?name=username
-* Starts a new game for user with name username
+* Starts a new game for user with name `username`
 
 
 ###### /game/option?opt=response&time=millis
@@ -67,13 +67,13 @@ Cross origins is currently `http://localhost:4200`.
 
 ###### /game/next
 * Gets the next question from the game
-* As soon as the gameOver field is set to true, the game is over according to the back end
+* As soon as `gameOver` is set to true, the game is over in the backend
 
 ##### Mappings for Leaderboard and User Info
 
 ###### /leaderboard/trophies?name=username
-###### /leaderboard/ration?name=username
+###### /leaderboard/ratio?name=username
 ###### /leaderboard/respTime?name=username
 
 * Returns the ranking based on the given field (trophies, ratio, respTime) as well as the information for
-the user with name username. The specified user is first in the list.
+the user with name `username`. The specified user is first in the list.
